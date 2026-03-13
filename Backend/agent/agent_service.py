@@ -18,7 +18,7 @@ def run_agent(data):
         weight = float(data["weight"])
         disease = data["disease"].lower()
         activity_level = data["activity_level"].lower()
-        food = data["food"].lower()
+        food = data["food_name"].lower()
 
         bmi = calculate_bmi(height, weight)
         bmr = calculate_bmr(weight, height, age, gender)
@@ -61,3 +61,14 @@ def run_agent(data):
 
     except Exception as e:
         return {"error": str(e)}
+
+
+# {
+#   "age": 24,
+#   "gender": "Male",
+#   "height": 175,
+#   "weight": 64,
+#   "disease": "obesity",
+#   "activity_level": "High",
+#   "food": "banana"
+# }
